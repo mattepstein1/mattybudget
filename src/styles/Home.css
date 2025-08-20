@@ -18,7 +18,7 @@ body {
   border-radius: 0;
   box-shadow: var(--color-shadow-strong);
   object-fit: cover;
-  height: 6remote: Repository not found.0vh;
+  height: 60vh;
   display: block;
   margin: 0;
 }
@@ -64,4 +64,5 @@ body {
   color: #e0e0e0;
 }
 .dark-mode .home-hero-container img {
-  box-shadow: var
+  box-shadow: var(--color-shadow-strong);
+}
