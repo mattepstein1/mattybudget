@@ -1,0 +1,540 @@
+.theme-toggle-flex {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.theme-switch-label {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    margin: 0 2px;
+}
+.theme-switch-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.theme-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+.theme-switch-input:checked + .theme-switch-slider {
+    background-color: #444;
+}
+.theme-switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+.theme-switch-input:checked + .theme-switch-slider:before {
+    transform: translateX(16px);
+    background-color: #fbc02d;
+}
+.theme-icon-sun,
+.theme-icon-moon {
+    font-size: 22px !important;
+    min-width: 28px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s, opacity 0.3s;
+}
+.theme-icon-sun {
+    margin-right: 4px;
+}
+.theme-icon-moon {
+    margin-left: 4px;
+}
+/* Force dashboard and expenses headings/text to white in dark mode */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode .dashboard h1,
+.dark-mode .dashboard h2,
+.dark-mode .expense-list h2 {
+    color: #f8f9fa !important;
+}
+/* Dark mode for dashboard and expenses headings/text */
+.dark-mode .dashboard h1,
+.dark-mode .dashboard h2,
+.dark-mode .dashboard,
+.dark-mode .expense-list h2 {
+    color: #f8f9fa !important;
+}
+/* Force dark mode for all list-group-items in expense list */
+.dark-mode .list-group-item {
+    background-color: #23272b !important;
+    color: #f8f9fa !important;
+    border-color: #444 !important;
+}
+.dark-mode .list-group {
+    background: transparent !important;
+}
+/* Dark mode for expense list items */
+.dark-mode .expense-list .list-group-item {
+    background: #23272b;
+    color: #f8f9fa;
+    border-color: #444;
+}
+.dark-mode .expense-list .list-group-item .material-icons {
+    color: #f8f9fa;
+}
+.dark-mode .expense-list .list-group-item strong,
+.dark-mode .expense-list .list-group-item small,
+.dark-mode .expense-list .list-group-item span {
+    color: #f8f9fa;
+}
+/* Dark mode for add-expense-form */
+.dark-mode .add-expense-form {
+    background: #23272b;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 24px;
+}
+.dark-mode .add-expense-form .form-group {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+}
+.dark-mode .add-expense-form label {
+    color: #e0e0e0;
+}
+.dark-mode .add-expense-form .form-control {
+    background: #23272b;
+    color: #f8f9fa;
+    border: 1px solid #444;
+}
+.dark-mode .add-expense-form .form-control::placeholder {
+    color: #b0b0b0;
+}
+/* Light mode styles */
+.light-mode {
+    background-color: #f8f9fa;
+    color: #222;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #181a1b;
+    color: #f8f9fa;
+}
+
+header.navbar, footer {
+    transition: background 0.3s, color 0.3s;
+}
+/* Header and footer backgrounds and text */
+.light-mode header.navbar, .light-mode footer {
+    background-color: #fff;
+    color: #222;
+}
+.dark-mode header.navbar, .dark-mode footer {
+    background-color: #23272b;
+    color: #f8f9fa;
+}
+
+/* Navbar brand and nav links */
+.light-mode .navbar-brand, .light-mode .nav-link, .light-mode .navbar-nav .nav-link {
+    color: #222 !important;
+}
+.dark-mode .navbar-brand, .dark-mode .nav-link, .dark-mode .navbar-nav .nav-link {
+    color: #f8f9fa !important;
+}
+
+/* Buttons */
+.light-mode .btn-danger, .light-mode .btn-primary {
+    color: #fff;
+}
+.dark-mode .btn-danger, .dark-mode .btn-primary {
+    color: #fff;
+}
+.light-mode .btn-secondary {
+    color: #222;
+}
+.dark-mode .btn-secondary {
+    color: #f8f9fa;
+}
+
+/* Form labels and input text */
+.light-mode label, .light-mode .form-control {
+    color: #222;
+    background-color: #fff;
+}
+/* Dark mode form fields and labels */
+.dark-mode label {
+    color: #e0e0e0;
+}
+.dark-mode .form-control {
+    color: #f8f9fa;
+    background-color: #23272b;
+    border: 1px solid #444;
+    box-shadow: none;
+}
+.dark-mode .form-control::placeholder {
+    color: #b0b0b0;
+    opacity: 1;
+}
+.dark-mode .form-group {
+    background: #23272b;
+    border-radius: 8px;
+    padding: 8px 0;
+}
+.dark-mode .btn-primary, .dark-mode .btn-danger, .dark-mode .btn-secondary {
+    background-color: #444 !important;
+    color: #f8f9fa !important;
+    border: none;
+}
+.dark-mode .btn-primary:hover, .dark-mode .btn-danger:hover, .dark-mode .btn-secondary:hover {
+    background-color: #666 !important;
+    color: #fff !important;
+}
+
+/* Material icons in header/footer */
+
+.theme-icon-sun {
+    color: #888;
+    opacity: 0.5;
+    transition: color 0.3s, opacity 0.3s;
+}
+.theme-icon-sun.active {
+    color: #fbc02d;
+    opacity: 1;
+}
+.theme-icon-moon {
+    color: #888;
+    opacity: 0.5;
+    transition: color 0.3s, opacity 0.3s;
+}
+.theme-icon-moon.active {
+    color: #fff;
+    opacity: 1;
+}
+
+/* Transition for smooth theme change */
+body, header, footer, .navbar, .form-control, .nav-link, .navbar-brand {
+    transition: background 0.3s, color 0.3s;
+}
+
+:root {
+    /* Spacing tokens */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    /* Color tokens */
+    --color-bg-light: #f8f9fa;
+    --color-bg-dark: #181a1b;
+    --color-primary: #007bff;
+    --color-accent: #fbc02d;
+    --color-text-light: #222;
+    --color-text-dark: #f8f9fa;
+    --color-card-light: #fff;
+    --color-card-dark: #23272b;
+    --color-border-light: #ced4da;
+    --color-border-dark: #444;
+    --color-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    --color-shadow-strong: 0 8px 32px rgba(31,38,135,0.18);
+    /* Font tokens */
+    --font-main: 'Arial', sans-serif;
+    --font-size-lg: 2.5rem;
+    --font-size-md: 1rem;
+}
+
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-light);
+    margin: 0;
+    padding: 0;
+}
+
+
+h1, h2, h3 {
+    color: var(--color-text-light);
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+.header, .footer {
+    background: var(--color-primary);
+    color: var(--color-card-light);
+    padding: var(--space-md) 0;
+    text-align: center;
+}
+
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.expense-list {
+    list-style: none;
+    padding: 0;
+}
+
+
+.expense-item {
+    background: var(--color-card-light);
+    margin: var(--space-sm) 0;
+    padding: var(--space-md);
+    border-radius: 5px;
+    box-shadow: var(--color-shadow);
+}
+
+
+.add-expense-form {
+    background: var(--color-card-light);
+    padding: var(--space-lg);
+    border-radius: 5px;
+    box-shadow: var(--color-shadow);
+}
+
+
+.add-expense-form .form-group {
+    margin-bottom: var(--space-md);
+}
+
+
+.btn-block {
+    margin-top: var(--space-lg);
+}
+
+
+.summary {
+    background: #e9ecef;
+    padding: var(--space-md);
+    border-radius: 5px;
+    text-align: center;
+    margin: var(--space-lg) 0;
+}
+
+
+.list-group-item {
+    margin-bottom: var(--space-md);
+    padding: var(--space-md);
+    border-radius: 5px;
+    box-shadow: var(--color-shadow);
+}
+
+
+/* Animated progress bar for total spend */
+.animated-progress .progress-bar {
+    transition: width 1s cubic-bezier(.4,2,.3,1), background 0.3s;
+}
+
+/* Total spend card styles */
+.total-spend-card {
+    background: var(--color-card-light);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: background 0.3s, color 0.3s;
+}
+.total-spend-amount {
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+.total-spend-budget {
+    color: #6c757d;
+    transition: color 0.3s;
+}
+/* Income section inside total spend card */
+.income-section {
+    background: transparent;
+    border-radius: 12px;
+    padding: 12px 0 0 0;
+}
+.income-section h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #343a40;
+}
+.income-section .form-control,
+.income-section .form-select {
+    background: #f8f9fa;
+    color: #222;
+    border: 1px solid #ced4da;
+    transition: background 0.3s, color 0.3s;
+}
+.income-section .input-group-text {
+    background: #e9ecef;
+    color: #222;
+    border: 1px solid #ced4da;
+}
+.income-section label {
+    color: #343a40;
+}
+.income-section .btn-success {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    transition: background 0.3s;
+}
+.income-section .btn-success:disabled {
+    background: #6c757d;
+    color: #fff;
+}
+.income-section .text-danger {
+    font-size: 0.95rem;
+}
+/* Dark mode for income section */
+.dark-mode .income-section {
+    background: transparent;
+}
+.dark-mode .income-section h6 {
+    color: #f8f9fa;
+}
+.dark-mode .income-section .form-control,
+.dark-mode .income-section .form-select {
+    background: #23272b;
+    color: #f8f9fa;
+    border: 1px solid #444;
+}
+.dark-mode .income-section .input-group-text {
+    background: #181a1b;
+    color: #f8f9fa;
+    border: 1px solid #444;
+}
+.dark-mode .income-section label {
+    color: #e0e0e0;
+}
+.dark-mode .income-section .btn-success {
+    background: #444 !important;
+    color: #f8f9fa !important;
+}
+.dark-mode .income-section .btn-success:disabled {
+    background: #666 !important;
+    color: #fff !important;
+}
+/* Dark mode for total spend card */
+.dark-mode .total-spend-card {
+    background: #23272b;
+    color: #f8f9fa;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.dark-mode .total-spend-amount {
+    color: #f8f9fa;
+}
+.dark-mode .total-spend-budget {
+    color: #b0b0b0;
+}
+.dark-mode .animated-progress {
+    background: #181a1b !important;
+}
+.light-mode .animated-progress {
+    background: #e9ecef !important;
+}
+
+/* Dashboard summary container dark/light mode styles */
+
+.dashboard-summary-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 32px 24px;
+    color: #fff;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+/* Responsive form and total spend card layout */
+@media (max-width: 767px) {
+  .add-expense-form, .total-spend-card {
+    margin-bottom: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .add-expense-form, .total-spend-card {
+    min-height: 100%;
+  }
+  .row.g-4.align-items-stretch > .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+}
+
+/* Glassmorphism card style for add-expense-form container */
+.add-expense-form.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 32px 24px;
+  color: #fff;
+}
+
+/* Particle background container */
+.particle-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(hsl(180, 100%, 80%), hsl(180, 100%, 80%) 10%, hsla(180, 100%, 80%, 0) 56%);
+  opacity: 0.8;
+  mix-blend-mode: screen;
+  animation: particle-move 30s linear infinite, particle-fade 2s ease-in-out infinite;
+}
+
+@keyframes particle-move {
+  0% {
+    transform: translateY(100vh) scale(0.4);
+  }
+  50% {
+    transform: translateY(0vh) scale(2.2);
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.4);
+  }
+}
+
+@keyframes particle-fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
