@@ -1,10 +1,7 @@
-// ...existing code...
-
-// ...existing code...
+import React, { useState } from 'react';
 
 type Expense = {
-    id?: string;
-    _id?: string;
+    _id: string;
     title: string;
     description: string;
     amount: number;
@@ -17,15 +14,13 @@ type ExpenseListProps = {
     onEdit: (id: string, updatedExpense: Partial<Expense>) => void;
 };
 
-import React, { useState } from 'react';
-
 const ExpenseList = ({ expenses, onDelete, onEdit }: ExpenseListProps) => {
     const [editingId, setEditingId] = useState<string | null>(null);
     const [editFields, setEditFields] = useState<Partial<Expense>>({});
     const [editTime, setEditTime] = useState<string>('');
 
     const startEdit = (expense: Expense) => {
-        setEditingId(expense.id || expense._id || null);
+        setEditingId(expense._id);
         // Split ISO date into date and time for editing
         const d = new Date(expense.date);
         const dateStr = d.toISOString().slice(0, 10); // yyyy-mm-dd
@@ -53,7 +48,7 @@ const ExpenseList = ({ expenses, onDelete, onEdit }: ExpenseListProps) => {
             const iso = new Date(`${editFields.date}T${editTime}:00+12:00`).toISOString();
             updatedFields.date = iso;
         }
-    if (id) onEdit(id, updatedFields);
+        if (id) onEdit(id, updatedFields);
         setEditingId(null);
         setEditFields({});
         setEditTime('');
@@ -63,9 +58,9 @@ const ExpenseList = ({ expenses, onDelete, onEdit }: ExpenseListProps) => {
         <div className="mt-4">
             <h2 className="mb-3">Expenses</h2>
             <ul className="list-group">
-                {expenses.map((expense: Expense, idx: number) => (
-                    <li key={expense.id || expense._id || idx} className="list-group-item d-flex justify-content-between align-items-center mb-2">
-                        {editingId === expense.id ? (
+                {expenses.map((expense: Expense) => (
+                    <li key={expense._id} className="list-group-item d-flex justify-content-between align-items-center mb-2">
+                        {editingId === expense._id ? (
                             <div className="w-100">
                                 <div className="mb-2">
                                     <input
@@ -109,7 +104,7 @@ const ExpenseList = ({ expenses, onDelete, onEdit }: ExpenseListProps) => {
                                     </div>
                                 </div>
                                 <div className="d-flex gap-2">
-                                    <button className="btn btn-success btn-sm" onClick={() => saveEdit(expense.id || expense._id)}>
+                                    <button className="btn btn-success btn-sm" onClick={() => saveEdit(expense._id)}>
                                         Save
                                     </button>
                                     <button className="btn btn-secondary btn-sm" onClick={cancelEdit}>
@@ -144,7 +139,7 @@ const ExpenseList = ({ expenses, onDelete, onEdit }: ExpenseListProps) => {
                                     </button>
                                     <button
                                         className="btn btn-danger btn-sm btn-round d-flex align-items-center justify-content-center"
-                                        onClick={() => onDelete(expense.id || expense._id || '')}
+                                        onClick={() => onDelete(expense._id)}
                                         title="Delete"
                                     >
                                         <span className="material-icons">delete</span>

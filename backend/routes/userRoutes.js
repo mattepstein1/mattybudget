@@ -21,7 +21,8 @@ router.post('/register', async (req, res) => {
 
 // Login Route
 router.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    let { username, password } = req.body;
+    username = username.toLowerCase();
     console.log('Login request:', { username, password }); // Log the incoming request
 
     try {

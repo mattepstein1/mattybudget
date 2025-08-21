@@ -52,11 +52,18 @@ const Header: React.FC = () => {
                     </div>
                     <ul className="navbar-nav flex-row gap-2 mb-0">
                         {!isLoggedIn ? (
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/login">
-                                    Login
-                                </Link>
-                            </li>
+                            <>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/login">
+                                        Login
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/register">
+                                        Register
+                                    </Link>
+                                </li>
+                            </>
                         ) : (
                             <>
                                 <li className="nav-item">

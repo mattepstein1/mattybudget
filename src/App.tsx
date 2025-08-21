@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Register from './pages/Register';
 import ParticleBackground from './components/ParticleBackground';
 
 const App: React.FC = () => {
@@ -26,6 +27,7 @@ const App: React.FC = () => {
                                     <Header />
                                     <Switch>
                                         <Route path="/login" component={Login} />
+                                        <Route path="/register" component={Register} />
                                         <Route
                                             path="/dashboard"
                                             render={() => (isLoggedIn ? <Dashboard /> : <Redirect to="/login" />)}
